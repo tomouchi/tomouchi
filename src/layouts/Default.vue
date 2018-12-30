@@ -1,17 +1,20 @@
 <template>
   <div class="layout">
     <GlobalHeader/>
-    <slot/>
+    <slot style="margin: 20px"/>
+    <GlobalFooter/>
   </div>
 </template>
 
 <script>
-import GlobalHeader from "../containers/GlobalHeader";
+import GlobalFooter from '../containers/GlobalFooter';
+import GlobalHeader from '../containers/GlobalHeader';
 
 export default {
   components: {
-    GlobalHeader
-  }
+    GlobalFooter,
+    GlobalHeader,
+  },
 };
 </script>
 
