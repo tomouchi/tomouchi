@@ -2,9 +2,9 @@
   <header>
     <div class="global-header__title">
       <h1 class="global-header__title__main">
-        <a class="global-header__title__main__link" href="index.html">
+        <g-link class="global-header__title__main__link" :to="{ name: 'top' }">
           <img src="../assets/tomokazu uchiyama.png" alt="tomokazu uchiyama"/>
-        </a>
+        </g-link>
       </h1>
       <h2 class="global-header__title__sub">
         <g-link class="nav__link" :to="{ name: 'top' }">◆TOP</g-link>
