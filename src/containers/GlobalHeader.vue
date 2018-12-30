@@ -7,16 +7,23 @@
         </a>
       </h1>
       <h2 class="global-header__title__sub">
-        <a href="/top">◆TOP</a>
+        <g-link class="nav__link" :to="{ name: 'top' }">◆TOP</g-link>
       </h2>
     </div>
     <nav class="global-header__nav">
       <ul class="global-header__nav__list">
-        <li class="global-header__nav__list__ele"><a href="info.html">INFO</a></li>
-        <li class="global-header__nav__list__ele"><a href="music/index.html">MUSIC</a></li>
-        <li class="global-header__nav__list__ele"><a href="profileBiography.html">PROFILE &amp; BIOGRAPHY</a></li>
-        <li class="global-header__nav__list__ele global-header__nav__list__ele--end"><a
-                href="lyrics/index.html">LYRICS</a></li>
+        <li class="global-header__nav__list__ele">
+          <g-link class="nav__link" :to="{ name: 'info' }">INFO</g-link>
+        </li>
+        <li class="global-header__nav__list__ele">
+          <g-link class="nav__link" :to="{ name: 'music' }">MUSIC</g-link>
+        </li>
+        <li class="global-header__nav__list__ele">
+          <g-link class="nav__link" :to="{ name: 'profileBiography' }">PROFILE &amp; BIOGRAPHY</g-link>
+        </li>
+        <li class="global-header__nav__list__ele global-header__nav__list__ele--end">
+          <g-link class="nav__link" :to="{ name: 'lyrics' }">LYRICS</g-link>
+        </li>
       </ul>
     </nav>
   </header>
@@ -24,22 +31,22 @@
 
 <script>
 export default {
-  name: "GlobalHeader"
+  name: 'GlobalHeader',
 };
 </script>
 
-
 <style lang="scss" scoped>
 $baseColor: #444444;
-$keyColor: #4488ff;
+$keyColor: #6da3fc;
 .global-header {
   &__title {
+    display: flex;
     &__main {
       margin: 0 auto;
       width: 90%;
       @media (min-width: 768px) {
         margin: 0;
-        width: 50%;
+        width: auto;
       }
       &__link {
         text-decoration: none;
@@ -50,11 +57,14 @@ $keyColor: #4488ff;
       }
     }
     &__sub {
+      align-self: flex-end;
       font-size: 1.1rem;
       margin-top: 0.4rem;
+      margin-left: auto;
       text-align: right;
       @media (min-width: 768px) {
-        text-align: left;
+        font-size: 1.2rem;
+        margin-top: 1rem;
       }
       a {
         &:link, &:visited, &:hover, &:active {
@@ -65,9 +75,8 @@ $keyColor: #4488ff;
     }
   }
   &__nav {
-    margin-bottom: 2.5em;
+    margin-top: 25px;
     &__list {
-      margin-top: 1rem;
       @media (min-width: 768px) {
         display: flex;
       }
@@ -80,7 +89,9 @@ $keyColor: #4488ff;
         line-height: 1.5;
         list-style-type: none;
         @media (min-width: 768px) {
-          margin-left: 1%;
+          &:not(:first-child) {
+            margin-left: 1%;
+          }
         }
         a {
           align-items: center;
