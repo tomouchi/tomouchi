@@ -22,7 +22,7 @@ export default {
 <style lang="scss" scoped>
 .info{
   &__info-area{
-   margin-top: 20px;
+   margin-top: 30px;
   }
 }
 </style>

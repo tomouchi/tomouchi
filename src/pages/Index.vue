@@ -3,8 +3,8 @@
     <div class="index">
       <div class="index__hero flexslider">
         <ul class="index__hero__list slides">
-          <li><a href="music/index.html#ayumumichi"><img src="@/assets/ayumumichi.jpg"/></a></li>
-          <li><a href="music/index.html#wisteria"><img src="@/assets/wisteria.jpg"/></a></li>
+          <li><a href="music#ayumumichi"><img src="/images/ayumumichi.jpg"/></a></li>
+          <li><a href="music#wisteria"><img src="/images/wisteria.jpg"/></a></li>
         </ul>
       </div>
       <InfoArea class="index__info-area" :infoRow=3 />
