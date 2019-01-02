@@ -1,43 +1,42 @@
 @charset "utf-8";
-/* Foundation▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼*/
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
+
 html {
   color: #444444;
-}
-
-@media (min-width:768px) {
-  html {
+  @media (min-width: 768px) {
     font-size: 100%;
   }
 }
+
+body {
+  background-color: rgba(230, 230, 230, 1.00);
+  font-family: "a-otf-futo-min-a101-pr6n", serif, "メイリオ", "游ゴシック";
+  font-style: normal;
+  font-weight: 400;
+  margin: 40px auto auto;
+  width: 96%;
+  @media (min-width: 768px) {
+    width: 70%;
+  }
+}
+
 h1, h2, h3, h4, h5, h6, nav, ul, dd, p {
   line-height: 1;
   margin: 0;
   padding: 0;
 }
-body {
-  background-color: rgba(230,230,230,1.00);
-  font-family: "a-otf-futo-min-a101-pr6n", serif, "メイリオ", "游ゴシック";
-  font-style: normal;
-  font-weight: 400;
-  margin: 3em auto auto;
-  width: 98%;
+
+dl {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
-a:link {
-  color: #444444;
-}
-a:visited {
-  color: #999999;
-}
-a:hover {
-  color: #444444;
-}
-a:active {
+
+a:link, a:hover, a:active {
   color: #444444;
 }
 
-@media (min-width:768px) {
-  body {
-    width: 70%;
-  }
+a:visited {
+  color: #999999;
 }

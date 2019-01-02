@@ -48,7 +48,6 @@ export default {
   &__contents {
     @media (min-width: 768px) {
       display: flex;
-
       margin-top: 15px;
       background-image: url('../assets/listBackgroundImage.jpg');
       background-size: cover;
@@ -56,12 +55,12 @@ export default {
     &__ele {
       background-image: url("../assets/listBackgroundImage.jpg");
       background-size: cover;
-      margin: 1rem 0 0;
-      padding: 0.5em 0 0.1rem;
+      margin-top: 15px;
+      padding: 15px 0 0 1.5%;
       @media (min-width: 768px) {
         background-image: none;
         float: left;
-        padding: 0 4%;
+        padding: 15px 4%;
         width: 42%;
       }
       &__title {
@@ -69,6 +68,7 @@ export default {
         border-bottom: thin dotted;
       }
       &__txt {
+        margin-top: 20px;
         dt {
           border-bottom: thin dotted;
           display: inline-block;
