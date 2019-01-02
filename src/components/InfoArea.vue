@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import info from '~/assets/info';
+import info from '~/data/info';
 
 export default {
   props: {
