@@ -47,12 +47,13 @@ export default {
     line-height: 1.1;
   }
   &__lists {
+    margin-top: 15px;
     &__ele {
       background-image: url(../assets/listBackgroundImage.jpg);
       background-size: cover;
       border-left: thin solid #666666;
-      margin: 20px 0 0;
-      padding: 10px 0 15px 10px;
+      margin: 9px 0 0;
+      padding: 20px 0 15px 10px;
       &__thumbnail {
         width: 150px;
         img {
@@ -61,7 +62,6 @@ export default {
       }
       &__info {
         display: flex;
-        margin: 4px 0 0;
         &__title {
           font-weight: bold;
         }
