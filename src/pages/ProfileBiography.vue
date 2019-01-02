@@ -32,14 +32,18 @@
       </div>
       <div class="profile-biography__biography">
         <h3 class="profile-biography__biography__title">Biography</h3>
-        <div v-for="biographyRowUnitCountEle in biographyRowUnitCount" class="profile-biography__biography__row">
-          <div class="profile-biography__biography__row__ele">
-            <h4>{{biography[biographyRowUnitCountEle].date}}</h4>
-            <p>{{biography[biographyRowUnitCountEle].content}}</p>
-          </div>
-          <div v-if="biographyRowUnitCountEle+1<biography.length" class="profile-biography__biography__row__ele">
-            <h4>{{biography[biographyRowUnitCountEle+1].date}}</h4>
-            <p>{{biography[biographyRowUnitCountEle+1].content}}</p>
+        <div class="profile-biography__biography__content">
+          <div v-for="biographyRowUnitCountEle in biographyRowUnitCount"
+               class="profile-biography__biography__content__row">
+            <div class="profile-biography__biography__content__row__ele">
+              <h4>{{biography[biographyRowUnitCountEle].date}}</h4>
+              <p>{{biography[biographyRowUnitCountEle].content}}</p>
+            </div>
+            <div v-if="biographyRowUnitCountEle+1<biography.length"
+                 class="profile-biography__biography__content__row__ele">
+              <h4>{{biography[biographyRowUnitCountEle+1].date}}</h4>
+              <p>{{biography[biographyRowUnitCountEle+1].content}}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -83,7 +87,7 @@ export default {
       line-height: 1.1;
     }
     &__content {
-      margin-top: 20px;
+      margin-top: 15px;
       @media (min-width: 768px) {
         display: flex;
       }
@@ -130,32 +134,38 @@ export default {
       font-size: 1.7rem;
       line-height: 1.1;
     }
-    &__row {
-      @media (min-width: 768px) {
-        margin-top: 7px;
-        padding: 15px 0;
-        background-image: url("../assets/listBackgroundImage.jpg");
-        background-size: cover;
-        display: flex;
-      }
-      &__ele {
-        margin-top: 7px;
-        padding: 15px 0 15px 1.5%;
-        background-image: url("../assets/listBackgroundImage.jpg");
-        background-size: cover;
+    &__content {
+      margin-top: 15px;
+      &__row {
         @media (min-width: 768px) {
-          background-image: initial;
-          box-sizing: border-box;
-          flex-basis: 50%;
-          margin-top: 0;
-          padding: 0 0 0 3%;
+          background-image: url("../assets/listBackgroundImage.jpg");
+          background-size: cover;
+          border-left: thin solid #666666;
+          display: flex;
+          margin-top: 7px;
+          padding: 15px 0;
         }
-        h4 {
-          border-bottom: dotted thin;
-          line-height: 1.2;
-        }
-        p {
-          line-height: 2;
+        &__ele {
+          background-image: url("../assets/listBackgroundImage.jpg");
+          background-size: cover;
+          border-left: thin solid #666666;
+          margin-top: 7px;
+          padding: 15px 0 15px 1.5%;
+          @media (min-width: 768px) {
+            background-image: initial;
+            border-left: none;
+            box-sizing: border-box;
+            flex-basis: 50%;
+            margin-top: 0;
+            padding: 0 0 0 3%;
+          }
+          h4 {
+            border-bottom: dotted thin;
+            line-height: 1.2;
+          }
+          p {
+            line-height: 2;
+          }
         }
       }
     }
