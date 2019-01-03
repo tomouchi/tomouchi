@@ -23,6 +23,8 @@ export default {
     InfoArea,
   },
   mounted() {
+    this.$root.$data.pageName = 'TOP';
+
     $('.flexslider').flexslider({
       directionNav: false,
       animationSpeed: 3000,
