@@ -34,6 +34,9 @@ export default {
       music: music,
     };
   },
+  mounted() {
+    this.$root.$data.pageName = 'MUSIC';
+  },
 };
 </script>
 

@@ -7,7 +7,7 @@
         </g-link>
       </h1>
       <h2 class="global-header__title__sub">
-        <g-link class="nav__link" :to="{ name: 'top' }">◆TOP</g-link>
+        <g-link class="nav__link" :to="{ name: $route.name }">◆{{$root.$data.pageName}}</g-link>
       </h2>
     </div>
     <nav class="global-header__nav">
