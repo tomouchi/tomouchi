@@ -71,6 +71,7 @@ export default {
       }), {});
 
       let _this = this;
+      _this.lyric = null;
       axios.get(`/lyrics/${musicEleId}.html`).then(
         (lyric) => {
           _this.lyric = lyric.data;
