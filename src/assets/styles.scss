@@ -13,7 +13,7 @@ body {
   font-family: "a-otf-futo-min-a101-pr6n", serif, "メイリオ", "游ゴシック";
   font-style: normal;
   font-weight: 400;
-  margin: 40px auto auto;
+  margin: 40px auto 30px;
   width: 96%;
   @media (min-width: 768px) {
     width: 70%;
@@ -39,4 +39,41 @@ a:link, a:hover, a:active {
 
 a:visited {
   color: #999999;
+}
+
+.music-info__music__lists_lyric, .music-info__lyrics__list__lyric {
+  background-image: url(../assets/listBackgroundImage.jpg);
+  background-size: cover;
+  font-size: 90%;
+  margin: 10px auto 0;
+  padding: 35px 10%;
+  text-align: center;
+  @media (min-width: 768px) {
+    font-size: 100%;
+  }
+  .title {
+    border-bottom: solid thin rgba(120, 120, 120, 1.00);
+    font-size: 130%;
+    line-height: 1.5;
+  }
+  .info {
+    font-size: 90%;
+    margin: 15px auto 0;
+    p {
+      line-height: 1.5;
+    }
+  }
+  .body {
+    margin-top: 20px;
+    p {
+      &:first-of-type {
+        margin-top: 0;
+      }
+      line-height: 1.5;
+      margin: 15px 0 0;
+      &.interlude {
+        margin: 35px 0 0;
+      }
+    }
+  }
 }
