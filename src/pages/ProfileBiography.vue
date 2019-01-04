@@ -73,7 +73,6 @@ export default {
           biographyRowUnitCount.push(i);
         }
       }
-      console.log(biographyRowUnitCount);
       return biographyRowUnitCount;
     },
   },

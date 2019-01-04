@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <MusicInfo musicInfoType="music"></MusicInfo>
+    <MusicInfo musicInfoType="lyric"></MusicInfo>
   </Layout>
 </template>
 
@@ -12,7 +12,7 @@ export default {
     MusicInfo,
   },
   mounted() {
-    this.$root.$data.pageName = 'MUSIC';
+    this.$root.$data.pageName = 'LYRICS';
   },
 };
 </script>
