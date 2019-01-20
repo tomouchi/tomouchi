@@ -10,7 +10,7 @@
             <div class="music-info__music__lists__ele__info">
               <div class="music-info__music__lists__ele__info__title">{{musicEle.title}}</div>
               <div class="music-info__music__lists__ele__info__link">
-                <a :href="`#${musicEle.id}`" @click="lyricDisplay(musicEle.id)">Lyrics</a>
+                <a href="#" @click.stop.prevent="lyricDisplay(musicEle.id)">Lyrics</a>
               </div>
             </div>
             <div class="music-info__music__lists__ele__data">
@@ -23,7 +23,8 @@
                 UP予定
               </template>
             </div>
-            <div class="music-info__music__lists_lyric" v-show="lyricDisplayFlags[musicEle.id]" v-html="lyric"></div>
+            <div :id="`music-info__lyrics__${musicEle.id}`" class="music-info__lyrics__list__lyric"
+                 hidden v-html="lyricDateList[musicEle.id]"></div>
           </div>
         </div>
       </div>
@@ -33,11 +34,12 @@
     <template v-else>
       <div class="music-info__lyrics">
         <h3 class="music-info__lyrics__title">Lyrics List</h3>
-        <ul v-for="musicEle in music" :id="`music-info__lyrics__${musicEle.id}`" class="music-info__lyrics__list">
+        <ul v-for="musicEle in music" class="music-info__lyrics__list">
           <li class="music-info__lyrics__list__ele">
-            <a :href="`#music-info__lyrics__${musicEle.id}`" @click="lyricDisplay(musicEle.id)">{{musicEle.title}}</a>
+            <a href="#" @click.stop.prevent="lyricDisplay(musicEle.id)">{{musicEle.title}}</a>
           </li>
-          <div v-show="lyricDisplayFlags[musicEle.id]" class="music-info__lyrics__list__lyric" v-html="lyric"></div>
+          <div :id="`music-info__lyrics__${musicEle.id}`" class="music-info__lyrics__list__lyric"
+               hidden v-html="lyricDateList[musicEle.id]"></div>
         </ul>
       </div>
     </template>
@@ -58,28 +60,45 @@ export default {
       music: music,
       lyric: null,
       lyricDisplayFlags: {},
+      lyricDateList: {},
     };
   },
   created() {
     this.lyricDisplayFlags = music.reduce((acc, cur) => ({...acc, [cur.id]: false}), {});
+    this.addLyricData();
   },
   methods: {
-    lyricDisplay(musicEleId) {
-      this.lyricDisplayFlags = Object.keys(this.lyricDisplayFlags).reduce((acc, cur) => ({
-        ...acc,
-        [cur]: musicEleId === cur ? !this.lyricDisplayFlags[cur] : false,
-      }), {});
-
-      let _this = this;
-      _this.lyric = null;
-      axios.get(`/lyrics/${musicEleId}.html`).then(
-        (lyric) => {
-          _this.lyric = lyric.data;
-        },
-        () => {
-          _this.lyric = `<div>歌詞が用意できていません<div/>`;
+    addLyricData() {
+      music.forEach(ele => {
+        this.getLyricData(ele.id).then(resolve => {
+          this.lyricDateList[ele.id] = resolve.data;
+          this.$forceUpdate();
+        }).catch(reject => {
+          this.lyricDateList[ele.id] = reject.data;
+          this.$forceUpdate();
+        });
+      });
+    },
+    getLyricData(musicEleId) {
+      return new Promise((resolve, reject) => {
+          axios.get(`/lyrics/${musicEleId}.html`).then(
+            (lyric) => {
+              resolve(lyric);
+            },
+            () => {
+              reject(`<div>歌詞が用意できていません<div/>`);
+            },
+          );
         },
       );
+    },
+    lyricDisplay(musicEleId) {
+      if (this.lyricDisplayFlags[musicEleId] === true) {
+        jQuery(`#music-info__lyrics__${musicEleId}`).slideUp(500);
+      } else {
+        jQuery(`#music-info__lyrics__${musicEleId}`).slideDown(1000);
+      }
+      this.lyricDisplayFlags[musicEleId] = !this.lyricDisplayFlags[musicEleId];
     },
   },
 };
