@@ -25,7 +25,7 @@ export default {
   mounted() {
     this.$root.$data.pageName = 'TOP';
 
-    $('.flexslider').flexslider({
+    jQuery('.flexslider').flexslider({
       directionNav: false,
       animationSpeed: 3000,
     });
