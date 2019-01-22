@@ -16,6 +16,9 @@ export default {
   components: {
     InfoArea,
   },
+  mounted() {
+    this.$root.$data.pageName = 'INFO';
+  },
 };
 </script>
 

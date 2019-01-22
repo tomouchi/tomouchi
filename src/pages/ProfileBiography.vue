@@ -62,6 +62,9 @@ export default {
       biography: biography,
     };
   },
+  mounted() {
+    this.$root.$data.pageName = 'PROFILE & BIOGRAPHY';
+  },
   computed: {
     biographyRowUnitCount: function () {
       let biographyRowUnitCount = [];
@@ -70,7 +73,6 @@ export default {
           biographyRowUnitCount.push(i);
         }
       }
-      console.log(biographyRowUnitCount);
       return biographyRowUnitCount;
     },
   },

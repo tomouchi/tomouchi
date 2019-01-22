@@ -7,7 +7,9 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "gridsome": "^0.3.0"
+    "axios": "^0.18.0",
+    "gridsome": "^0.4.4",
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "node-sass": "^4.11.0",
