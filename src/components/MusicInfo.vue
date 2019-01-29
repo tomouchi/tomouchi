@@ -71,11 +71,9 @@ export default {
     addLyricData() {
       music.forEach(ele => {
         this.getLyricData(ele.id).then(resolve => {
-          this.lyricDateList[ele.id] = resolve.data;
-          this.$forceUpdate();
+          this.$set(this.lyricDateList, ele.id, resolve.data);
         }).catch(reject => {
-          this.lyricDateList[ele.id] = reject.data;
-          this.$forceUpdate();
+          this.$set(this.lyricDateList, ele.id, reject.data);
         });
       });
     },

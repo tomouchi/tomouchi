@@ -19,7 +19,7 @@
           <g-link class="nav__link" :to="{ name: 'music' }">MUSIC</g-link>
         </li>
         <li class="global-header__nav__list__ele">
-          <g-link class="nav__link" :to="{ name: 'profileBiography' }">PROFILE &amp; BIOGRAPHY</g-link>
+          <g-link class="nav__link" :to="{ name: 'biography' }">PROFILE &amp; BIOGRAPHY</g-link>
         </li>
         <li class="global-header__nav__list__ele global-header__nav__list__ele--end">
           <g-link class="nav__link" :to="{ name: 'lyrics' }">LYRICS</g-link>
