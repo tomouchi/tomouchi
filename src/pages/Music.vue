@@ -8,10 +8,13 @@
 import MusicInfo from '~/components/MusicInfo'
 
 export default {
+  metaInfo: {
+    title: 'MUSIC | tomokazu uchiyama',
+  },
   components: {
     MusicInfo,
   },
-  mounted() {
+  created() {
     this.$root.$data.pageName = 'MUSIC';
   },
 };

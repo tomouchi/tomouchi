@@ -11,12 +11,12 @@ import InfoArea from '../components/InfoArea';
 
 export default {
   metaInfo: {
-    title: 'tomokazu uchiyama | INFO',
+    title: 'INFO | tomokazu uchiyama',
   },
   components: {
     InfoArea,
   },
-  mounted() {
+  created() {
     this.$root.$data.pageName = 'INFO';
   },
 };
