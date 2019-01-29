@@ -17,14 +17,15 @@ import InfoArea from '../components/InfoArea';
 
 export default {
   metaInfo: {
-    title: 'tomokazu uchiyama | TOP',
+    title: 'TOP | tomokazu uchiyama',
   },
   components: {
     InfoArea,
   },
-  mounted() {
+  created() {
     this.$root.$data.pageName = 'TOP';
-
+  },
+  mounted() {
     jQuery('.flexslider').flexslider({
       directionNav: false,
       animationSpeed: 3000,
