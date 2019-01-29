@@ -9,6 +9,7 @@ export default function (Vue, {appOptions, head, router}) {
   appOptions.data = {
     pageName: '◆TOP',
   };
+  head.htmlAttrs = {lang: 'ja'};
   head.link.push(
     {rel: 'stylesheet', href: '/styles/flexslider.css'},
   );
