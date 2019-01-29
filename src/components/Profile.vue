@@ -58,7 +58,7 @@
       padding: 15px 0 7px 0;
       width: 130px;
       @media (min-width: 768px) {
-        padding: 15px 0 7px 2%;
+        padding: 15px 0 7px 15px;
       }
       &__other {
         padding-top: 17px;
