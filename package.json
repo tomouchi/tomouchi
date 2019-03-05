@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "gridsome": "^0.4.5",
+    "gridsome": "^0.5.4",
     "jquery": "^3.3.1"
   },
   "devDependencies": {
