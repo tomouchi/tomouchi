@@ -1,22 +1,29 @@
 <template>
   <Layout>
+    <template #pageName
+      >◆PROFILE & BIOGRAPHY</template
+    >
     <div class="profile-biography">
       <div class="profile-biography__profile">
-        <profile/>
+        <profile />
       </div>
       <div class="profile-biography__biography">
         <h3 class="profile-biography__biography__title">Biography</h3>
         <div class="profile-biography__biography__content">
-          <div v-for="biographyRowUnitCountEle in historyRowUnitCount"
-               class="profile-biography__biography__content__row">
+          <div
+            v-for="biographyRowUnitCountEle in historyRowUnitCount"
+            class="profile-biography__biography__content__row"
+          >
             <div class="profile-biography__biography__content__row__ele">
-              <h4>{{biography[biographyRowUnitCountEle].date}}</h4>
-              <p>{{biography[biographyRowUnitCountEle].content}}</p>
+              <h4>{{ biography[biographyRowUnitCountEle].date }}</h4>
+              <p>{{ biography[biographyRowUnitCountEle].content }}</p>
             </div>
-            <div v-if="biographyRowUnitCountEle+1<biography.length"
-                 class="profile-biography__biography__content__row__ele">
-              <h4>{{biography[biographyRowUnitCountEle+1].date}}</h4>
-              <p>{{biography[biographyRowUnitCountEle+1].content}}</p>
+            <div
+              v-if="biographyRowUnitCountEle + 1 < biography.length"
+              class="profile-biography__biography__content__row__ele"
+            >
+              <h4>{{ biography[biographyRowUnitCountEle + 1].date }}</h4>
+              <p>{{ biography[biographyRowUnitCountEle + 1].content }}</p>
             </div>
           </div>
         </div>
@@ -29,29 +36,26 @@
 </template>
 
 <script>
-import biography from '~/data/biography';
-import Profile from '~/components/Profile';
+import biography from "~/data/biography";
+import Profile from "~/components/Profile";
 
 export default {
   metaInfo: {
-    title: 'PROFILE & BIOGRAPHY | tomokazu uchiyama',
+    title: "PROFILE & BIOGRAPHY | tomokazu uchiyama",
   },
   components: {
     Profile,
   },
-  data: function () {
+  data: function() {
     return {
       biography: biography,
     };
   },
-  created() {
-    this.$root.$data.pageName = 'PROFILE & BIOGRAPHY';
-  },
   computed: {
-    historyRowUnitCount: function () {
+    historyRowUnitCount: function() {
       let historyRowUnitCount = [];
       for (let i = 0; i < biography.length; i++) {
-        if ((i % 2) === 0) {
+        if (i % 2 === 0) {
           historyRowUnitCount.push(i);
         }
       }

@@ -1,17 +1,18 @@
 <template>
   <div class="history">
-    <h3 class="history__title">{{title}}</h3>
+    <h3 class="history__title">{{ title }}</h3>
     <div class="history__content">
-      <div v-for="historyRowUnitCountEle in historyRowUnitCount"
-           class="history__content__row">
+      <div v-for="historyRowUnitCountEle in historyRowUnitCount" class="history__content__row">
         <div class="history__content__row__ele">
-          <h4>{{historyData[historyRowUnitCountEle].date}}</h4>
+          <h4>{{ historyData[historyRowUnitCountEle].date }}</h4>
           <p v-html="historyData[historyRowUnitCountEle].content"></p>
         </div>
-        <div v-if="historyRowUnitCountEle+1<historyData.length"
-             class="history__content__row__ele">
-          <h4>{{historyData[historyRowUnitCountEle+1].date}}</h4>
-          <p v-html="historyData[historyRowUnitCountEle+1].content"></p>
+        <div
+          v-if="historyRowUnitCountEle + 1 < historyData.length"
+          class="history__content__row__ele"
+        >
+          <h4>{{ historyData[historyRowUnitCountEle + 1].date }}</h4>
+          <p v-html="historyData[historyRowUnitCountEle + 1].content"></p>
         </div>
       </div>
     </div>
@@ -20,12 +21,12 @@
 
 <script>
 export default {
-  props: ['historyData', 'title'],
+  props: ["historyData", "title"],
   computed: {
-    historyRowUnitCount: function () {
+    historyRowUnitCount: function() {
       let historyRowUnitCount = [];
       for (let i = 0; i < this.historyData.length; i++) {
-        if ((i % 2) === 0) {
+        if (i % 2 === 0) {
           historyRowUnitCount.push(i);
         }
       }

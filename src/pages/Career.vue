@@ -1,10 +1,13 @@
 <template>
   <Layout>
+    <template #pageName
+      >◆PROFILE & CAREER</template
+    >
     <div class="profile-career">
       <div class="profile-career__profile">
-        <profile/>
+        <profile />
       </div>
-      <History title="CAREER" :historyData="career"/>
+      <History title="CAREER" :historyData="career" />
       <div class="profile-career__link">
         <g-link :to="{ name: 'biography' }">PROFILE &amp; BIOGRAPHY</g-link>
       </div>
@@ -13,26 +16,22 @@
 </template>
 
 <script>
-import career from '~/data/career';
-import Profile from '~/components/Profile';
-import History from '~/components/History';
-
+import career from "~/data/career";
+import Profile from "~/components/Profile";
+import History from "~/components/History";
 
 export default {
   metaInfo: {
-    title: 'PROFILE & CAREER | tomokazu uchiyama',
+    title: "PROFILE & CAREER | tomokazu uchiyama",
   },
   components: {
     History,
     Profile,
   },
-  data: function () {
+  data: function() {
     return {
       career: career,
     };
-  },
-  created() {
-    this.$root.$data.pageName = 'PROFILE & CAREER';
   },
 };
 </script>

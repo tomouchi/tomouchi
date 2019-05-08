@@ -1,10 +1,10 @@
 <template>
-  <p class="global-footer"> &copy;2019 tomokazu uchiyama</p>
+  <p class="global-footer">&copy;2019 tomokazu uchiyama</p>
 </template>
 
 <script>
 export default {
-  name: 'GlobalFooter',
+  name: "GlobalFooter",
 };
 </script>
 
