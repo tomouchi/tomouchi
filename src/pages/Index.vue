@@ -1,32 +1,36 @@
 <template>
   <Layout>
+    <template #pageName
+      >◆TOP</template
+    >
     <div class="index">
       <div class="index__hero flexslider">
         <ul class="index__hero__list slides">
-          <li><a href="music#ayumumichi"><img src="/images/ayumumichi.jpg"/></a></li>
-          <li><a href="music#wisteria"><img src="/images/wisteria.jpg"/></a></li>
+          <li>
+            <a href="music#ayumumichi"><img src="/images/ayumumichi.jpg"/></a>
+          </li>
+          <li>
+            <a href="music#wisteria"><img src="/images/wisteria.jpg"/></a>
+          </li>
         </ul>
       </div>
-      <InfoArea class="index__info-area" :infoRow=3 />
+      <InfoArea class="index__info-area" :infoRow="3" />
     </div>
   </Layout>
 </template>
 
 <script>
-import InfoArea from '../components/InfoArea';
+import InfoArea from "../components/InfoArea";
 
 export default {
   metaInfo: {
-    title: 'TOP | tomokazu uchiyama',
+    title: "TOP | tomokazu uchiyama",
   },
   components: {
     InfoArea,
   },
-  created() {
-    this.$root.$data.pageName = 'TOP';
-  },
   mounted() {
-    jQuery('.flexslider').flexslider({
+    jQuery(".flexslider").flexslider({
       directionNav: false,
       animationSpeed: 3000,
     });

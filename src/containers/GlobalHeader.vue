@@ -3,11 +3,11 @@
     <div class="global-header__title">
       <h1 class="global-header__title__main">
         <g-link class="global-header__title__main__link" :to="{ name: 'top' }">
-          <img src="../assets/tomokazu uchiyama.png" alt="tomokazu uchiyama"/>
+          <img src="../assets/tomokazu uchiyama.png" alt="tomokazu uchiyama" />
         </g-link>
       </h1>
       <h2 class="global-header__title__sub">
-        <g-link class="nav__link" :to="{ name: $route.name }">◆{{$root.$data.pageName}}</g-link>
+        <g-link class="nav__link" :to="{ name: $route.name }"><slot /></g-link>
       </h2>
     </div>
     <nav class="global-header__nav">
@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'GlobalHeader',
+  name: "GlobalHeader",
 };
 </script>
 
@@ -67,7 +67,10 @@ $keyColor: #6da3fc;
         margin-top: 1rem;
       }
       a {
-        &:link, &:visited, &:hover, &:active {
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
           color: $keyColor;
         }
         text-decoration: none;
@@ -81,8 +84,8 @@ $keyColor: #6da3fc;
         display: flex;
       }
       &__ele {
-        border-bottom: medium solid rgba(120, 100, 60, 1.00);
-        border-left: thin solid rgba(120, 100, 60, 1.00);
+        border-bottom: medium solid rgba(120, 100, 60, 1);
+        border-left: thin solid rgba(120, 100, 60, 1);
         display: flex;
         flex-basis: calc(100% / 4);
         font-size: 1.1rem;
@@ -100,7 +103,10 @@ $keyColor: #6da3fc;
           justify-content: center;
           text-align: center;
           text-decoration: none;
-          &:link, &:visited, &:hover, &:active {
+          &:link,
+          &:visited,
+          &:hover,
+          &:active {
             color: $baseColor;
           }
         }
