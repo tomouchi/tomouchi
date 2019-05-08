@@ -5,15 +5,15 @@
       <div class="info-area__contents__ele">
         <h4 class="info-area__contents__ele__title">Content</h4>
         <dl v-for="contentEle in infoContent" class="info-area__contents__ele__txt">
-          <dt>{{contentEle[0]}}</dt>
-          <dd>{{contentEle[1]}}</dd>
+          <dt>{{ contentEle[0] }}</dt>
+          <dd>{{ contentEle[1] }}</dd>
         </dl>
       </div>
       <div class="info-area__contents__ele">
         <h4 class="info-area__contents__ele__title">Tech</h4>
         <dl v-for="techEle in infoTech" class="info-area__contents__ele__txt">
-          <dt>{{techEle[0]}}</dt>
-          <dd>{{techEle[1]}}</dd>
+          <dt>{{ techEle[0] }}</dt>
+          <dd>{{ techEle[1] }}</dd>
         </dl>
       </div>
     </div>
@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import info from '~/data/info';
+import info from "~/data/info";
 
 export default {
   props: {
-    infoRow: Number
+    infoRow: Number,
   },
   computed: {
     infoContent() {
@@ -49,7 +49,7 @@ export default {
     @media (min-width: 768px) {
       display: flex;
       margin-top: 15px;
-      background-image: url('../assets/listBackgroundImage.jpg');
+      background-image: url("../assets/listBackgroundImage.jpg");
       background-size: cover;
     }
     &__ele {

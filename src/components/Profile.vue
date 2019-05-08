@@ -6,8 +6,8 @@
         <img src="../assets/profile.jpg" width="500" />
       </div>
       <div class="profile__content__txt">
-        <p class="profile__content__txt__name"
-          >内山 友和<a
+        <p class="profile__content__txt__name">
+          内山 友和<a
             href="https://github.com/tomouchi"
             target="_blank"
             title="内山友和のGitHubページを新しいウィンドウで開く"
