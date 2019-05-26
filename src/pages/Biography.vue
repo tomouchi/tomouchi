@@ -41,7 +41,7 @@ import Profile from "~/components/Profile";
 
 export default {
   metaInfo: {
-    title: "PROFILE & BIOGRAPHY | tomokazu uchiyama",
+    title: "PROFILE & BIOGRAPHY",
   },
   components: {
     Profile,

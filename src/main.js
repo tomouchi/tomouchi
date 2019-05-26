@@ -6,9 +6,6 @@ import myRouter from '~/router';
 export default function (Vue, {appOptions, head, router}) {
   Vue.component('Layout', DefaultLayout);
   router.addRoutes(myRouter);
-  appOptions.data = {
-    pageName: '◆TOP',
-  };
   head.htmlAttrs = {lang: 'ja'};
   head.link.push(
     {rel: 'stylesheet', href: '/styles/flexslider.css'},
