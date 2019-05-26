@@ -14,7 +14,7 @@ import InfoArea from "../components/InfoArea";
 
 export default {
   metaInfo: {
-    title: "INFO | tomokazu uchiyama",
+    title: "INFO",
   },
   components: {
     InfoArea,

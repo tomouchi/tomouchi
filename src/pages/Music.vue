@@ -12,7 +12,7 @@ import MusicInfo from "~/components/MusicInfo";
 
 export default {
   metaInfo: {
-    title: "MUSIC | tomokazu uchiyama",
+    title: "MUSIC",
   },
   components: {
     MusicInfo,
