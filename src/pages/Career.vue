@@ -22,7 +22,7 @@ import History from "~/components/History";
 
 export default {
   metaInfo: {
-    title: "PROFILE & CAREER | tomokazu uchiyama",
+    title: "PROFILE & CAREER",
   },
   components: {
     History,
