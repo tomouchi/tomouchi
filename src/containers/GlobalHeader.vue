@@ -2,27 +2,27 @@
   <header>
     <div class="global-header__title">
       <h1 class="global-header__title__main">
-        <g-link class="global-header__title__main__link" :to="{ name: 'top' }">
+        <g-link class="global-header__title__main__link" to="/">
           <img src="../assets/tomokazu uchiyama.png" alt="tomokazu uchiyama" />
         </g-link>
       </h1>
       <h2 class="global-header__title__sub">
-        <g-link class="nav__link" :to="{ name: $route.name }"><slot /></g-link>
+        <g-link class="nav__link" :to="`${$route.path}`"><slot /></g-link>
       </h2>
     </div>
     <nav class="global-header__nav">
       <ul class="global-header__nav__list">
         <li class="global-header__nav__list__ele">
-          <g-link class="nav__link" :to="{ name: 'info' }">INFO</g-link>
+          <g-link class="nav__link" to="/info">INFO</g-link>
         </li>
         <li class="global-header__nav__list__ele">
-          <g-link class="nav__link" :to="{ name: 'music' }">MUSIC</g-link>
+          <g-link class="nav__link" to="/music">MUSIC</g-link>
         </li>
         <li class="global-header__nav__list__ele">
-          <g-link class="nav__link" :to="{ name: 'biography' }">PROFILE &amp; BIOGRAPHY</g-link>
+          <g-link class="nav__link" to="/biography">PROFILE &amp; BIOGRAPHY</g-link>
         </li>
         <li class="global-header__nav__list__ele global-header__nav__list__ele--end">
-          <g-link class="nav__link" :to="{ name: 'lyrics' }">LYRICS</g-link>
+          <g-link class="nav__link" to="/lyrics">LYRICS</g-link>
         </li>
       </ul>
     </nav>

@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="profile-biography__link">
-        <g-link :to="{ name: 'career' }">CAREER</g-link>
+        <g-link to="/career">CAREER</g-link>
       </div>
     </div>
   </Layout>
