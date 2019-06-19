@@ -9,7 +9,7 @@
       </div>
       <History title="CAREER" :historyData="career" />
       <div class="profile-career__link">
-        <g-link :to="{ name: 'biography' }">PROFILE &amp; BIOGRAPHY</g-link>
+        <g-link to="/biography">PROFILE &amp; BIOGRAPHY</g-link>
       </div>
     </div>
   </Layout>
